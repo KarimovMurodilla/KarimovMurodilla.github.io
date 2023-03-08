@@ -28,7 +28,7 @@ async def buy_process(web_app_message):
                            title='Title',
                            description='Title',
                            provider_token=PAYMENTS_TOKEN,
-                           currency='rub',
+                           currency='uzs',
                            need_email=True,
                            need_phone_number=True,
                            prices=PRICE[f'{web_app_message.web_app_data.data}'],
