@@ -22,6 +22,7 @@ PRICE = {
     '6': [LabeledPrice(label='Item6', amount=6000000)]
 }
 
+
 @dp.message_handler(content_types='web_app_data')
 async def buy_process(web_app_message):
     await bot.send_invoice(web_app_message.chat.id,
@@ -35,9 +36,11 @@ async def buy_process(web_app_message):
                            start_parameter='example',
                            payload='some_invoice')
 
+
 @dp.pre_checkout_query_handler(lambda q: True)
 async def checkout_process(pre_checkout_query: PreCheckoutQuery):
     await bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True)
+
 
 @dp.message_handler(content_types=ContentType.SUCCESSFUL_PAYMENT)
 async def successful_payment(message: Message):
