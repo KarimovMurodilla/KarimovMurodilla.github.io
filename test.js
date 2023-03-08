@@ -24,16 +24,8 @@ quantityBlocks.forEach(function (block) {
         tg.MainButton.setText("Вы выбрали товар!");
         tg.MainButton.show();
     });
+});
 
-
-
-    //   // обработчик изменения значения в поле ввода количества
-    //   quantityInput.addEventListener('change', function () {
-    //     const currentValue = parseFloat(quantityInput.value); // текущее значение в поле ввода
-    //     if (currentValue < parseInt(quantityInput.min)) { // проверяем на минимальное значение
-    //       quantityInput.value = quantityInput.min;
-    //     } else if (currentValue > parseInt(quantityInput.max)) { // проверяем на максимальное значение
-    //       quantityInput.value = quantityInput.max;
-    //     }
-    //   });
+Telegram.WebApp.onEvent("mainButtonClicked", function(){
+	tg.sendData(item);
 });
