@@ -11,13 +11,13 @@ quantityBlocks.forEach(function (block) {
     const plusButton = block.querySelector('.plus');
     const quantityInput = block.querySelector('input[type="text"]');
 
-    // обработчик клика по кнопке уменьшения
-    minusButton.addEventListener('click', function () {
-        const currentValue = parseFloat(quantityInput.value); // текущее значение в поле ввода
-        if (currentValue == 0) { // проверяем на минимальное значение
-            tg.MainButton.hide();
-        }
-    });
+    // // обработчик клика по кнопке уменьшения
+    // minusButton.addEventListener('click', function () {
+    //     const currentValue = parseFloat(quantityInput.value); // текущее значение в поле ввода
+    //     if (currentValue == 0) { // проверяем на минимальное значение
+    //         tg.MainButton.hide();
+    //     }
+    // });
 
     // обработчик клика по кнопке увеличения
     plusButton.addEventListener('click', function () {
@@ -38,4 +38,4 @@ p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.last_name}`;
 
 
-usercard.appendChild(p); 
+usercard.appendChild(p);
