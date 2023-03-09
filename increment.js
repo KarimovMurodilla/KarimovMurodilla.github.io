@@ -27,7 +27,6 @@ quantityBlocks.forEach(function (block) {
     plusButton.addEventListener('click', function () {
         tg.MainButton.setText("Вы выбрали товар!");
         tg.MainButton.show();
-        console.log(event.target)
         const currentValue = parseFloat(quantityInput.value); // текущее значение в поле ввода
         if (currentValue < parseInt(quantityInput.max)) { // проверяем на максимальное значение
             quantityInput.value = currentValue + parseInt(quantityInput.step); // увеличиваем значение на шаг
