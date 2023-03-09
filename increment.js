@@ -1,11 +1,3 @@
-let tg = window.Telegram.WebApp;
-
-tg.expand();
-
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab37";
-
-
 const quantityBlocks = document.querySelectorAll('.quantity');
 quantityBlocks.forEach(function (block) {
     const minusButton = block.querySelector('.minus');
@@ -25,8 +17,6 @@ quantityBlocks.forEach(function (block) {
 
     // обработчик клика по кнопке увеличения
     plusButton.addEventListener('click', function () {
-        tg.MainButton.setText("Вы выбрали товар!");
-        tg.MainButton.show();
         const currentValue = parseFloat(quantityInput.value); // текущее значение в поле ввода
         if (currentValue < parseInt(quantityInput.max)) { // проверяем на максимальное значение
             quantityInput.value = currentValue + parseInt(quantityInput.step); // увеличиваем значение на шаг
@@ -43,18 +33,3 @@ quantityBlocks.forEach(function (block) {
         }
     });
 });
-
-
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-	tg.sendData('1');
-});
-
-let usercard = document.getElementById("usercard");
-
-let p = document.createElement("p");
-
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name}`;
-
-
-usercard.appendChild(p); 
